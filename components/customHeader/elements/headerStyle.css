@@ -1,0 +1,40 @@
+a {
+  color: inherit;
+  text-decoration: inherit; /* no underline */
+}
+
+.wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+
+    min-height: 4rem;
+}
+
+.quiz-link {
+    display: grid;
+    height: 100%;
+    min-width: 4rem;
+    align-items: center;
+    justify-items: center;
+
+    border: 1px solid black;
+}
+.quiz-link:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.logotype-wrapper {
+    display: flex;
+}
+.logotype {
+    margin: auto 0;
+    height: 3rem;
+}
+.logotype:hover {
+    cursor: pointer;
+}
