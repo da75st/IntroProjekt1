@@ -1,5 +1,5 @@
 body {
-    background-color: #2d2626;
+    background-color: #fff;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
@@ -23,10 +23,4 @@ body {
     font-weight: bold;
     font-family: sans-serif;
     box-shadow: 5px 5px 30px #fff;
-}
-
-.box:hover {
-    color: #fff;
-    background-color: rgb(0, 255, 70);
-    transition: 0.5s;
 }
