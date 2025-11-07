@@ -59,19 +59,26 @@
         font-weight: 600;
     }
 
-    .btn{
+    #answerButton{
+        display: grid;
+    }
+
+    #answerButton label{
         background: #fff;
         font-weight: 500;
         width: 100%;
         border: 1px solid #000;
         padding: 10px;
-        margin: 10px;
+        margin: 10px 0px;
         text-align: left;
         border-radius: 4px;
         cursor: pointer;
+
+        display: flex;
+        gap: 10px;
     }
 
-    .btn:hover{
+    #answerButton label:hover{
         background-color: #000;
         color: #fff ;
     }

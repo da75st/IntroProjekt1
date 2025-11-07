@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="quiz.css">
-    <script src="./quiz.js"></script> 
+    <script type="module" src="./quiz.js"></script>
 </head>
 <body>
 <div class="app">
     <h1>Quiz</h1>
     <div class="quiz"></div>
     <h2 id="questionText"></h2>
-    <div id="answerButton">
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-    </div>
+    <form id="answerButton">
+        <label name="answer-1">
+            <input type="radio" name="answer" class="btn">
+            <p class="answerText"></p>
+        </label>
+        <label name="answer-2">
+            <input type="radio" name="answer" class="btn">
+            <p class="answerText"></p>
+        </label>
+        <label name="answer-3">
+            <input type="radio" name="answer" class="btn">
+            <p class="answerText"></p>
+        </label>
+        <label name="answer-4">
+            <input type="radio" name="answer" class="btn">
+            <p class="answerText"></p>
+        </label>
+    </form>
 <div class="navigation">
     <button class="nav-btn" id="backbtn">Back</button>
     <button class="nav-btn" id="nextbtn">Next</button>
