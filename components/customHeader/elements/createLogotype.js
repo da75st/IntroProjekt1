@@ -1,9 +1,11 @@
 /**
- * 
- * @returns {node}
+ * Creates and returns a logotype element containing an SVG icon.
+ *
+ * @returns {HTMLDivElement} A <div> element with class "logotype-wrapper" containing
+ * an SVG element representing the logotype. The SVG redirects to the sites origin when clicked.
  */
 export function createLogotype() {
-    const logotypeWrapper = document.createElement('div') //Is this the right element?
+    const logotypeWrapper = document.createElement('div')
     const svgNS = "http://www.w3.org/2000/svg"
 
     // Create the <svg> element
@@ -22,8 +24,11 @@ export function createLogotype() {
     // Append the path to the svg
     svg.appendChild(path)
 
+    // Set attributes
     logotypeWrapper.classList = 'logotype-wrapper'
     svg.classList = 'logotype'
+
+    // Set functionality and append
     svg.onclick = () => location.href = location.origin
     logotypeWrapper.append(svg)
 
