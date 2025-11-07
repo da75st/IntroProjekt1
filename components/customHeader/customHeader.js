@@ -19,7 +19,7 @@ class CustomHeader extends HTMLElement {
     wrapper.appendChild(createEduDropdown())
     wrapper.appendChild(createQuizLink())
 
-    //Append to shadow DOM
+    // Append to shadow DOM
     shadow.appendChild(wrapper)
   }
 }
