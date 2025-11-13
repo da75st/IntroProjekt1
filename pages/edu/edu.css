@@ -1,12 +1,6 @@
 body {
     background-color: #fff;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
+    height: 100%;
 }
 
 .box {
@@ -23,4 +17,23 @@ body {
     font-weight: bold;
     font-family: sans-serif;
     box-shadow: 5px 5px 30px #fff;
+}
+
+.infobox {
+    width: 800px;
+    height: auto;
+    background-color: #fff;
+    border: 2px solid black;
+}
+
+footer {
+    font-size: 20px;
+    text-align: center;
+    background-color: #ababab;
+    padding-top: 48px;
+    padding-bottom: 18px;
+}
+
+.hover-green:hover {
+    color: green;
 }
