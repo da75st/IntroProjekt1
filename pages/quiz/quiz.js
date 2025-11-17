@@ -39,14 +39,14 @@ async function showQuestion() {
 
 function updateNavigationButtons(currentQuestionIndex) {
     if (currentQuestionIndex === 0) {
-        backBtn.id = 'disabled-btn'
+        backBtn.classList.add('disabled-btn')
         backBtn.disabled = true
     } else if (currentQuestionIndex === 9) {
         nextBtn.textContent = 'Submit'
         nextBtn.id = 'submit-btn'
         nextBtn.addEventListener('click', handleSubmit)
     } else {
-        backBtn.id = backBtnID
+        backBtn.classList.remove('disabled-btn')
         backBtn.disabled = false
         nextBtn.textContent = nextBtnText
         nextBtn.id = nextBtnID

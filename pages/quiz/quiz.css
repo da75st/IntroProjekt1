@@ -33,10 +33,18 @@
         border: 2px solid #000;
         padding: 10px 10px ;
         border-radius: 10px; 
-        width: 10%;
         cursor: pointer;
         font-weight: 600;
     }
+
+    .disabled-btn {
+    background-color: gray !important;
+    color: white;
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    }
+
 
     .nav-btn:hover {
         background: #000;
@@ -66,7 +74,6 @@
     #answerButton label{
         background: #fff;
         font-weight: 500;
-        width: 100%;
         border: 1px solid #000;
         padding: 10px;
         margin: 10px 0px;
@@ -82,3 +89,11 @@
         background-color: #000;
         color: #fff ;
     }
+
+    .disabled-btn {
+    background-color: gray !important;
+    color: white;
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
