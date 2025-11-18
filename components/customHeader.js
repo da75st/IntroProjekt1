@@ -118,19 +118,20 @@
   // Helper: gets the project root so that relative paths can be used while being served as a file://
   function getProjectRoot() {
     const href = location.href;
+    const PROJECT_FOLDER = 'IntroProjekt1'
     const alertMsg = `
 The website uses a web component as the header and as such is reliant on you to either load the website as a file (file:///) or so that the location.origin is valid.
 
 This is because the header (which is reused in every subpage) needs a consistant way to link to other subpages and no webserver was allowed in the project.
 
-(The project folder also needs to be named exactly IntroProjekt1)
+(The root folder must be named exactly ${PROJECT_FOLDER})
     `;
 
     // If loaded as a file return the path
     if (href.startsWith("file://")) {
-      const idx = href.indexOf("/IntroProjekt1/");
+      const idx = href.indexOf(`/${PROJECT_FOLDER}/`);
       if (idx !== -1) {
-        return href.slice(0, idx + "IntroProjekt1".length + 1);
+        return href.slice(0, idx + PROJECT_FOLDER.length + 1);
       }
       alert(alertMsg);
       return null;
