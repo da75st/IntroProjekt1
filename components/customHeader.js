@@ -89,6 +89,9 @@
     .dropdown-content a:hover {
       background-color: #919df9;
     }
+    .eduItem {
+      text-align: center;
+    }
 
     /* Parent to .dropdown-content. Set to relative so that one can use "position: absolute" */
     .dropdown-wrapper {
@@ -195,11 +198,12 @@ This is because the header (which is reused in every subpage) needs a consistant
         }
 
         static get DROPDOWN_ITEMS() {
+          const root = getProjectRoot()
           return [
-            { text: 'placeholder1', link: '#', class: 'eduItem' },
-            { text: 'placeholder2', link: '#', class: 'eduItem' },
-            { text: 'placeholder3', link: '#', class: 'eduItem' },
-            { text: 'placeholder4', link: '#', class: 'eduItem' }
+            { text: 'Energieffektivkodning', link: `${root}/pages/edu/edu1.html`, class: 'eduItem' },
+            { text: 'Grön IT', link: `${root}/pages/edu/edu2.html`, class: 'eduItem' },
+            { text: 'Resurshållning', link: `${root}/pages/edu/edu3.html`, class: 'eduItem' },
+            { text: 'Miljöanalys', link: `${root}/pages/edu/edu4.html`, class: 'eduItem' }
           ]
         }
 
