@@ -12,102 +12,102 @@ let currentQuestionIndex = 0;
 let score = 0;
 const questions = [
     {
-        "question": "quesiton number 1",
+        "question": "1. Välj det alternativ som beskriver saker i hemmet som kan automatisera med hjälp IoT.",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"Automatisera vädret utomhus", "correct": false},
+            {"text":"Styra belysning i hemmet", "correct": true},
+            {"text":"Styra trafikljusen i kvarteret", "correct": false},
+            {"text":"Ändra gravationen i källaren", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 2",
+        "question": "2. Välj en teknik som har stor påverkan på att minska klimatutsläpp. ",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"Mönsteringenkänning av rutiner", "correct": true},
+            {"text":"Virtuell i vidoesamtal", "correct": false},
+            {"text":"3D-effekter i mobilspel", "correct": false},
+            {"text":"Snabbare skrivare för kontor", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 3",  
+        "question": "3. Hur kan smart hemteknik användas för att göra resursanvändingen mer effektiv i hemmet?",  
         "answers": [
-            {"text":"HEJ", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"Öka strömförbrukningen med fler lampor", "correct": false},
+            {"text":"Slå på alla apparater samtidigt", "correct": false},
+            {"text":"Mönsterigenkänning", "correct": true},
+            {"text":"Lämna fönster öppna när värmen är på", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 4",
+        "question": "4. Hur många procent av de globala koldioxidutsläppen står IT-sektorn för? ",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"10%", "correct": false},
+            {"text":"23%", "correct": false},
+            {"text":"2%", "correct": true},
+            {"text":"7%", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 5",
+        "question": "5. Hur kan AI bidra till att minska marin föroening enligt FN:s hållbarhetsmål?",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"AI kan rena vattnet direkt genom kemiska processer", "correct": false},
+            {"text":"AI kan identifiera oljeläckage i havet via satellitbilder", "correct": true},
+            {"text":"AI kan stoppa oljeutsläpp genom att flytta oljan automatiskt", "correct": false},
+            {"text":"AI kan ändra havsströmmar för att sprida kemikalier", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 6",
+        "question": "6. På vilket sätt kan AI förbättra effektiviten i energisystem och öka användinen av förnybar energi?  ",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"AI kan förutsäga elproduktionen från vind- och solkraft genom analys av väderdata och satellitdata", "correct": true},
+            {"text":"AI kan skapa energi från tomma ytor utan sol eller vind", "correct": false},
+            {"text":"AI kan stänga av alla fossila bränslen utan energibrist", "correct": false},
+            {"text":"AI kan lagra energi i väderförhållanden som inte existerar", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 7",
+        "question": "7. Varför är AI särskillt effektiv för miljöanalys jämfört med manuell databehandling",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"AI kan läsa tankar för att förutsäga miljöpåverkan", "correct": false},
+            {"text":"AI kan analysera data utan att faktiskt ha någon datakälla", "correct": true},
+            {"text":"AI kan lagra stora mängder data", "correct": false},
+            {"text":"AI kan hantera, analysera enomra datamängder", "correct": true}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 8",
+        "question": "8. Hur har BiTorrent minskat energiförbrukningen i sin fildelningsprocess 9 ",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"Genom att stoppa all fildelning helt", "correct": false},
+            {"text":"Genom att tvinga alla användare att stänga av sina datorer under natten", "correct": false},
+            {"text":"Genom en proxy-arkitektur som övertar största delan av fildelningen", "correct": true},
+            {"text":"Genom att öka CPU-användingen för att påskynda nedladdningar", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 9",
+        "question": "9. Vilken åtgärd inom Grön IT bidrar till minskad energiförbrukning i program som Zoom?",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"Alla användare uppmandes att stänga av sina datorer permanent", "correct": false},
+            {"text":"Onödiga automatiska funktioner togs bort, vilket minskade energianvändningen utan att påverka funktionaliteten", "correct": true},
+            {"text":"Programmet installeraddes på flera datorer för snabbare nedladdning", "correct": false},
+            {"text":"Zoom började använda mer CPU-kraft för att öka hastigheten", "correct": false}
         ],
         "currentGuess": null
     },
     {
-        "question": "quesiton number 10",
+        "question": "10. Vilken åldersgrupp av kvinnor köper/beställer flest varor/tjänster via internet",
         "answers": [
-            {"text":"answer1", "correct": false},
-            {"text":"answer2", "correct": true},
-            {"text":"answer3", "correct": false},
-            {"text":"answer4", "correct": false}
+            {"text":"16-24 år", "correct": false},
+            {"text":"55-64 år", "correct": false},
+            {"text":"45-54 år ", "correct": false},
+            {"text":"25-34 år", "correct": true}
         ],
         "currentGuess": null
     }
