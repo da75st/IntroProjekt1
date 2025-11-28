@@ -10,7 +10,13 @@ body {
 .content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 980px;
+    max-width: 700px;
+    font-family: alkatra;
+}
+
+.big-letter::first-letter {
+    font-size: 150%;
+    font-weight: bold;
 }
 
 .margin-top {
@@ -34,6 +40,10 @@ body {
     letter-spacing: 8px;
 }
 
+
+li{
+    margin-bottom: 1em;
+}
 .box {
     width: 300px;
     height: 150px;
