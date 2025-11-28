@@ -1,14 +1,16 @@
- *{
+
+/* Nollställer standardmarginaler och padding för alla element */
+*{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
+/* Grundinställningar för hela sidan */
     body{
         margin: 8px;
         background: white;
     }
-
+    /* Huvudbehållaren för quiz-appen */
     .app{
         background: #fff;
         width: 90%;
@@ -18,16 +20,17 @@
         padding: 30px;
         display: flex;
         flex-direction: column;
-        
+        /* Skugga för kort-effekt*/
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);;
     }
-
+    /* Container för navigationsknappar */
     .navigation{
         margin-top: auto;
         display: flex;
         justify-content: space-between;
         gap: 10 px
     }
+    /* Standardutseende för knappar */
     .nav-btn {
         background: #fff;
         color: #000;
@@ -37,41 +40,41 @@
         cursor: pointer;
         font-weight: 600;
     }
-
+    /* Stil för inaktiverad knapp*/
     .disabled-btn {
     background-color: gray !important;
     color: white;
     opacity: 0.6;
-    cursor: not-allowed;
+    cursor: not-allowed; /* Hand-ikon vid hover */
     pointer-events: none;
     }
 
-
+    /* Hover-effekt för knappar*/
     .nav-btn:hover {
         background: #000;
         color: #fff;
     }
-
+    /* Titel i appen */
     .app h1 {
         font-size: 25px;
         font-weight: 600;
         border-bottom: 1px solid #000;
         padding-bottom: 30px;
     }
-
+    /* Wrapper runt quiz-innehållet */
     .quiz{
         padding: 20px 0;
     }
-
+    /* Frågetext*/
     .quiz h2{
         font-size: 18px;
         font-weight: 600;
     }
-
+    /* Container för svarsalternativen*/
     #answerButton{
-        display: grid;
+        display: grid; /* Grid-layout för svaren */
     }
-
+    /* Varje svarsalternativ*/
     #answerButton label{
         background: #fff;
         font-weight: 500;
@@ -83,18 +86,12 @@
         cursor: pointer;
 
         display: flex;
-        gap: 10px;
+        gap: 10px; /* Avständ mellan radio-knapp och text */
     }
-
+    /* Hover-effekt på svarsalternativ */
     #answerButton label:hover{
         background-color: #000;
         color: #fff ;
     }
 
-    .disabled-btn {
-    background-color: gray !important;
-    color: white;
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-events: none;
-}
+   
