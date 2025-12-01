@@ -1,3 +1,4 @@
+// Hämta HTML-element som används för att visa fråga och navigera i quizet
 const questionElement = document.getElementById('questionText');
 const answerLabels = document.querySelectorAll('#answerButton label')
 const nextBtn = document.getElementById('nextbtn')
@@ -7,9 +8,9 @@ const backBtn = document.getElementById('backbtn')
 const backBtnID = backBtn.id
 
 
-
+// Håller reda på vilken fråga användaren befinner sig på och poäng
 let currentQuestionIndex = 0;
-let score = 0;
+// Lista med alla frågar
 const questions = [
     {
         "question": "1. Välj det alternativ som beskriver saker i hemmet som kan automatisera med hjälp IoT.",
@@ -22,7 +23,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "2. Välj en teknik som har stor påverkan på att minska klimatutsläpp. ",
+        "question": "2. Välj en teknik som har stor påverkan på att minska klimatutsläpp.",
         "answers": [
             {"text":"Mönsteringenkänning av rutiner", "correct": true},
             {"text":"Virtuell i vidoesamtal", "correct": false},
@@ -42,7 +43,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "4. Hur många procent av de globala koldioxidutsläppen står IT-sektorn för? ",
+        "question": "4. Hur många procent av de globala koldioxidutsläppen står IT-sektorn för?",
         "answers": [
             {"text":"10%", "correct": false},
             {"text":"23%", "correct": false},
@@ -62,7 +63,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "6. På vilket sätt kan AI förbättra effektiviten i energisystem och öka användinen av förnybar energi?  ",
+        "question": "6. På vilket sätt kan AI förbättra effektiviten i energisystem och öka användinen av förnybar energi?",
         "answers": [
             {"text":"AI kan förutsäga elproduktionen från vind- och solkraft genom analys av väderdata och satellitdata", "correct": true},
             {"text":"AI kan skapa energi från tomma ytor utan sol eller vind", "correct": false},
@@ -72,7 +73,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "7. Varför är AI särskillt effektiv för miljöanalys jämfört med manuell databehandling",
+        "question": "7. Varför är AI särskillt effektiv för miljöanalys jämfört med manuell databehandling.",
         "answers": [
             {"text":"AI kan läsa tankar för att förutsäga miljöpåverkan", "correct": false},
             {"text":"AI kan analysera data utan att faktiskt ha någon datakälla", "correct": true},
@@ -82,7 +83,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "8. Hur har BiTorrent minskat energiförbrukningen i sin fildelningsprocess 9 ",
+        "question": "8. Hur har BiTorrent minskat energiförbrukningen i sin fildelningsprocess. ",
         "answers": [
             {"text":"Genom att stoppa all fildelning helt", "correct": false},
             {"text":"Genom att tvinga alla användare att stänga av sina datorer under natten", "correct": false},
@@ -102,7 +103,7 @@ const questions = [
         "currentGuess": null
     },
     {
-        "question": "10. Vilken åldersgrupp av kvinnor köper/beställer flest varor/tjänster via internet",
+        "question": "10. Vilken åldersgrupp av kvinnor köper/beställer flest varor/tjänster via internet.",
         "answers": [
             {"text":"16-24 år", "correct": false},
             {"text":"55-64 år", "correct": false},
@@ -112,7 +113,7 @@ const questions = [
         "currentGuess": null
     }
 ]
-
+// Visar aktuell fråga och alternativen
 function showQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -124,20 +125,24 @@ function showQuestion() {
         const answerText = question.answers[i].text
 
         answerLabels[i].querySelector('p').textContent = answerText
-
+        
+        // Markerar tidigare val
         radiobuttons[i].checked = answerText === currentGuess
     }
     updateNavigationButtons(currentQuestionIndex) 
 }
-
+// Uppdaterar knapparna beronde på vilken fråga man är på
 function updateNavigationButtons(currentQuestionIndex) {
+    // Inaktivera back-btn
     if (currentQuestionIndex === 0) {
         backBtn.classList.add('disabled-btn')
         backBtn.disabled = true
+        // Next blir till submit i slutet
     } else if (currentQuestionIndex === 9) {
         nextBtn.textContent = 'Submit'
         nextBtn.id = 'submit-btn'
         nextBtn.addEventListener('click', handleSubmit)
+        // Återställer till orginal
     } else {
         backBtn.classList.remove('disabled-btn')
         backBtn.disabled = false
@@ -146,18 +151,18 @@ function updateNavigationButtons(currentQuestionIndex) {
         nextBtn.removeEventListener('click', handleSubmit)
      }
 }
-
+// Körs när quizet skickas in 
 function handleSubmit() {
     showResult()
     location.href = getProjectRoot() + '/index.html'
 }
-
+// Sparar användarens svar på aktuell fråga
 function updateAnswer() {
     const answerElement = document.querySelector('#answerButton input[type="radio"]:checked ~ p')
     const answerText = answerElement ? answerElement.textContent : null
     questions[currentQuestionIndex].currentGuess = answerText
 }
-
+// Kontrollerar om svaret är korrekt
 function guessIsCorrect(question){
     const currentGuess = question.currentGuess
     const answers = question.answers
@@ -170,24 +175,25 @@ function guessIsCorrect(question){
         return false
     }  
 }
-
+// Räknar ut totalpoäng
 function calculateScore() {
     const resultsArray = questions.map(guessIsCorrect)
     const score = resultsArray.filter((boolean) => boolean === true).length
     return score
 }
-
+// Går till nästa fråga
 function nextQuestion(){
     updateAnswer()
     currentQuestionIndex++
     showQuestion()
 }
+// Går tillbaka 
 function backQuestion(){
     updateAnswer()
     currentQuestionIndex--
     showQuestion()    
 }
-
+// Visar resultat i en alert
 function showResult(){
     alert(`Your score was: ${calculateScore()} / ${questions.length}`)                                  
 }
@@ -222,7 +228,8 @@ This is because the header (which is reused in every subpage) needs a consistant
         return null;
     }
 }
-
+// Event listeners för knappar
 nextBtn.addEventListener('click', nextQuestion)
 backBtn.addEventListener('click', backQuestion)
+// Visar första frågan direkt när sidan laddas
 showQuestion()
