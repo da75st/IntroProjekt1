@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <!--Länkar till CSS-filen som styr sidans utseende --> 
     <link rel="stylesheet" href="quiz.css">
+    <!-- Länkar till quizets JavaScript-fil, defer gör att skripet körs efter att HMTl laddats--> 
     <script src="./quiz.js" defer></script>
+    <!-- Importerar custom header-komponent --> 
     <script src="../../components/customHeader.js"></script>
 </head>
 <body>
+    <!-- Infogar en återanvändbar header som laddas via customHeadear.js --> 
 <custom-header></custom-header>
+<!-- Huvudbehållaren för hela quiz-appen--> 
 <div class="app">
     <h1>Quiz</h1>
     <div class="quiz"></div>
+    <!-- Här skrivs själva frågetexten ut av JavaScript--> 
     <h2 id="questionText"></h2>
     <form id="answerButton">
+        <!-- Varje label representerar ett svaralternativ--> 
         <label name="answer-1">
             <input type="radio" name="answer" class="btn">
             <p class="answerText"></p>
@@ -32,6 +39,7 @@
             <p class="answerText"></p>
         </label>
     </form>
+    <!-- Navigationsknappar för att gå framåt eller bakåt mellan frågorna--> 
 <div class="navigation">
     <button class="nav-btn" id="backbtn">Back</button>
     <button class="nav-btn" id="nextbtn">Next</button>

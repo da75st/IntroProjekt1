@@ -10,7 +10,6 @@ const backBtnID = backBtn.id
 
 // Håller reda på vilken fråga användaren befinner sig på och poäng
 let currentQuestionIndex = 0;
-let score = 0;
 // Lista med alla frågar
 const questions = [
     {
