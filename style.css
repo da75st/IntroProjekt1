@@ -1,0 +1,30 @@
+body {
+ font-family: 'alkatra';
+ background: #fff;
+ line-height: 1.6;
+}
+
+.container {
+ max-width: 1000px;
+ margin: auto;
+ display: flex;
+ align-items: center;
+ gap: 40px;
+}
+
+.content {
+ flex: 1;
+}
+
+.image {
+ flex: 1;
+ min-width: 300px;
+ text-align: center;
+ padding-top: 40px;
+}
+
+.image img {
+ max-width: 100%;
+ border-radius: 4px;
+ box-shadow: 2px 2px 5px 2px #888;
+}
