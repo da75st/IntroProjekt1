@@ -1,21 +1,25 @@
+/* Initierar bakgrundsfärg*/
 body {
- font-family: 'alkatra';
  background: #fff;
- line-height: 1.6;
 }
 
+/* Huvudbehållare som centrerar innehållet */
 .container {
  max-width: 1000px;
+ font-family: 'alkatra';
+ line-height: 1.6;
  margin: auto;
  display: flex;
  align-items: center;
  gap: 40px;
 }
 
+/* Behållare för texten */
 .content {
  flex: 1;
 }
 
+/* Behållare för bilden */
 .image {
  flex: 1;
  min-width: 300px;
@@ -23,6 +27,7 @@ body {
  padding-top: 40px;
 }
 
+/* Beskriver bildens utformning */
 .image img {
  max-width: 100%;
  border-radius: 4px;
@@ -48,6 +53,7 @@ body {
  text-align: center;
 }
 
+/* Underrubrik */
 .subheading {
  font-size: 1.2rem;
  color: #888;
@@ -56,6 +62,7 @@ body {
  text-align: center;
 }
 
+/* Hoverdesign för länk */
 .hover-green:hover{
  color: green;
 }
