@@ -28,3 +28,30 @@ body {
  border-radius: 4px;
  box-shadow: 2px 2px 5px 2px #888;
 }
+
+/* Centrera och skapa utrymme för huvudrubrik */
+.headline {
+ text-align: center;
+ padding-top: 14px;
+ padding-bottom: 14px;
+}
+
+/* Huvudrubrikens design */
+.tag {
+ background-color: #000;
+ color: #fff;
+ display: inline-block;
+ letter-spacing: 8px;
+ border-radius: 10px 0px;
+ padding-left: 8px;
+ padding-right: 8px;
+ text-align: center;
+}
+
+.subheading {
+ font-size: 1.2rem;
+ color: #888;
+ letter-spacing: 2px;
+ margin-bottom: 14px;
+ text-align: center;
+}
