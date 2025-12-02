@@ -55,3 +55,7 @@ body {
  margin-bottom: 14px;
  text-align: center;
 }
+
+.hover-green:hover{
+ color: green;
+}
