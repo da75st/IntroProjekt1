@@ -1,12 +1,15 @@
+/* Initiera bakgrundsfärg */
 body {
     background-color: #fff;
     height: 100%;
 }
 
+/* Luft runt info i container */
 .container {
     padding: 0.1em 16px;
 }
 
+/* Vad texten ska ha för radbredd och font*/
 .content {
     margin-left: auto;
     margin-right: auto;
@@ -14,21 +17,25 @@ body {
     font-family: alkatra;
 }
 
+/* Klass som sätter stor bokstav innan paragraf */
 .big-letter::first-letter {
     font-size: 150%;
     font-weight: bold;
 }
 
+/* Övre marginal till bild */
 .margin-top {
     margin-top: 16px;
 }
 
+/* Huvudrubrik */
 .headline {
     text-align: center;
     padding-top: 64px;
     padding-bottom: 64px;
 }
 
+/* Design på huvudrubrik */
 .tag {
     background-color: #000;
     color: #fff;
@@ -40,32 +47,20 @@ body {
     letter-spacing: 8px;
 }
 
-
+/* Mellanrum på punktlista*/
 li{
     margin-bottom: 1em;
 }
-.box {
-    width: 300px;
-    height: 150px;
-    background-color: white;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-family: sans-serif;
-    box-shadow: 5px 5px 30px #fff;
-}
 
+
+/* Inforuta ska ha svart skarp kant på vänster sida */
 .infobox {
     background-color: #ababab;
     padding: 0.1em 16px;
     border-left: 8px solid #000;
 }
 
+/* Footer med grå bakgrund*/
 footer {
     font-size: 20px;
     text-align: center;
@@ -74,6 +69,7 @@ footer {
     padding-bottom: 18px;
 }
 
+/* Grön hover-effekt på länk */
 .hover-green:hover {
     color: green;
 }
