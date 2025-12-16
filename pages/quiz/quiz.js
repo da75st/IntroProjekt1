@@ -212,9 +212,10 @@ This is because the header (which is reused in every subpage) needs a consistant
 
     // If loaded as a file return the path
     if (href.startsWith("file://")) {
-        const idx = href.indexOf(`/${PROJECT_FOLDER}/`);
+        const marker = `/${PROJECT_FOLDER}`;
+        const idx = href.lastIndexOf(marker);
         if (idx !== -1) {
-            return href.slice(0, idx + PROJECT_FOLDER.length + 1);
+            return href.slice(0, idx + marker.length);
         }
         alert(alertMsg);
         return null;
