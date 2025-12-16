@@ -172,8 +172,7 @@ This is because the header (which is reused in every subpage) needs a consistant
     logotypeWrapper.classList = 'logotype-wrapper'
     svg.classList = 'logotype'
 
-    // onclick: return to the origin 
-    // a.k.a return to "protocol://domain.tld:port/""
+    // onclick: return to the origin / root
     svg.onclick = function () { location.href = getProjectRoot() + '/index.html' }
     logotypeWrapper.append(svg)
 
@@ -198,6 +197,7 @@ This is because the header (which is reused in every subpage) needs a consistant
           this._handleOutsideClick = this._handleOutsideClick.bind(this)
         }
 
+        // getter that returns an array containing objects with the text and the absolute link to each subpage together with the class.
         static get DROPDOWN_ITEMS() {
           const root = getProjectRoot()
           return [
@@ -208,16 +208,25 @@ This is because the header (which is reused in every subpage) needs a consistant
           ]
         }
 
+        // Callback that gets executed when this element is connected to the DOM
         connectedCallback() {
           const shadow = this.attachShadow({ mode: 'open' })
           shadow.appendChild(createStyle(dropdownCSS))
 
+          // Create the inner html for the dropdown items 
           let dropdownContent = ''
           for (const item of EduDropdown.DROPDOWN_ITEMS) {
             dropdownContent += `<a href=${item.link} class=${item.class}>${item.text}</a>`
           }
 
-          const outerHTML = `\n      <label class="dropdown-btn" for="edu-toggle">Education</label>\n      <input type="checkbox" id="edu-toggle">\n      <div class="dropdown-content"> \n        ${dropdownContent}\n      </div>\n    `
+          // Insert the above inner html into the button
+          const outerHTML = `
+            <label class="dropdown-btn" for="edu-toggle">Education</label>    
+            <input type="checkbox" id="edu-toggle">      
+            <div class="dropdown-content"> 
+              ${dropdownContent}  
+            </div>    
+            `
 
           const wrapper = document.createElement('div')
           wrapper.setAttribute('class', 'dropdown-wrapper')
@@ -227,30 +236,40 @@ This is because the header (which is reused in every subpage) needs a consistant
           this._checkbox = shadow.querySelector('#edu-toggle')
           this._shadow = shadow
 
+          // Close if you click outside the dropdown
           document.addEventListener('click', this._handleOutsideClick)
         }
 
+        // Cleanup
         disconnectedCallback() {
           document.removeEventListener('click', this._handleOutsideClick)
         }
 
+        // If the click event path does not include this custom element then close the dropdown
+        // (Close if you click outside)
         _handleOutsideClick(event) {
           if (event.composedPath().includes(this._shadow)) return
           if (this._checkbox) this._checkbox.checked = false
         }
       }
 
+      // Define the element custom element
       customElements.define('edu-dropdown', EduDropdown)
     }
 
+    // Create the custom element and return it
     return document.createElement('edu-dropdown')
   }
 
   // CustomHeader web component (uses the helpers above)
   class CustomHeader extends HTMLElement {
+    
+    // Getter for the absolute link to the quiz page 
     static get QUIZ_LINK() { return `${getProjectRoot()}/pages/quiz/quiz.html`}
     constructor() { super() }
 
+    // Called when added to the dom:
+    // Creates and appends the sub elements to a common parent
     connectedCallback() {
       const shadow = this.attachShadow({ mode: 'open' })
       shadow.appendChild(createStyle(headerCSS))
@@ -266,7 +285,7 @@ This is because the header (which is reused in every subpage) needs a consistant
     }
   }
 
-  // Makes sure custom-header is defined as a custom element if this file is imported as a script
+  // Makes sure custom-header is defined as a custom element when this file is imported as a script
   if (!customElements.get('custom-header')) {
     customElements.define('custom-header', CustomHeader)
   }
